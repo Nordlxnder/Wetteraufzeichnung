@@ -1,6 +1,7 @@
 # Wetteraufzeichnung
 
  Funktion
+
     Die von einer Wetterstation abgefragten Werte werden in einer
     Logdatei wetter.log geschrieben
     Über einen cronjob kann die Datei alle 5 Minuten oder in einem
