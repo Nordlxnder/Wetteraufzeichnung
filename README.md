@@ -2,14 +2,38 @@
 
  Funktion
 
-    Die von einer Wetterstation abgefragten Werte werden in einer
-    Logdatei wetter.log geschrieben
+    Die von einer Wetterstation abgefragten Werte werden in eine
+    Logdatei wetter.log geschrieben.
     Über einen cronjob kann die Datei alle 5 Minuten oder in einem
     anderem Zeitraster ausgeführt werden. 
 
-
+    
+ Voraussetzungen
+    
+    Raspberry oder Bananapi
+    
+    Betriebssystem: Arch Linux oder ähnliches ;-)
+    Software: sudo
+    
+    Ramlaufwerk /mnt/ram 
+    
  Installation
+ 
+    benötigte Verzeichnisse anlegen
+    
+        sudo mkdir /mnt/skripte
+        sudo mkdir /mnt/ram
+    
+    Ramlaufwerk einrichten
+    
+        sudo nano /etc/fstab
+        
+            ramfs   /mnt/ram        ramfs   defaults,noatime,nosuid,mode=0755,size=200m     0 0
 
+        sudo reboot
+    
+     
+    
     cd /
     sudo git clone https://github.com/Nordlxnder/Wetterstation.git
     # BenutzerXY  bitte ersetzen durch deinen Benutzer
