@@ -1,0 +1,30 @@
+#########################################################################
+#
+# Wetterdatenspeicherung.service
+# systemd service: beim Start des PCs wird das Skripte und die wetter.log-Datei
+#                  in ein RAM Verzeichnis(Ramlaufwerk) kopiert um 
+#                  die Schreibzugriffe auf die SD Karte zureduzieren
+#                  beim Stop wird die Logdatei auf der SD Karte gesichert 
+#                  damit sie beim Neustart wieder ins RAM Laufwerk kopiert
+#                  werden kann
+#                  das Schreiben der Log Datei wird durch einen cronjob erledigt
+#
+#########################################################################
+
+[Unit]
+Description=Wetterdatenspeicherung
+After=basic.target
+#After=netctl@Rheinblick3.service
+
+[Service]
+Type=simple
+User=root
+RemainAfterExit=true
+ExecStart=/usr/bin/wetterdatenspeicherungstart.sh
+ExecStop=/usr/bin/wetterdatenspeicherungstop.sh 
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
+
+# EOF
