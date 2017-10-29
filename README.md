@@ -13,7 +13,7 @@
     Raspberry oder Bananapi
     
     Betriebssystem: Arch Linux oder ähnliches ;-)
-    Software: sudo , git
+    Software: sudo , git , cronie
     
     Ramlaufwerk /mnt/ram 
     
